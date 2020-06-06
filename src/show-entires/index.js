@@ -13,7 +13,7 @@ function ShowEntires(props) {
     const getPosts = async () => {
       try {
         const postsData = await API.graphql(graphqlOperation(listPosts))
-        setPosts(postsData.listPosts.items);
+        setPosts(postsData.data.listPosts.items);
       } catch (e) {
         console.log(e);
       }
@@ -21,13 +21,11 @@ function ShowEntires(props) {
     getPosts();
   }, [])
 
-  console.log(posts)
-
   return (
     <Grid className={classes.root}>
     Show user entires
     {posts.map(post => (
-      <Typography>
+      <Typography key={post.id}>
       {post.selectionText}
       </Typography>
     ))}
