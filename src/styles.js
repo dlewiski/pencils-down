@@ -1,6 +1,6 @@
 const styles = theme => ({
   root: {
-    margin: '0 auto',
+    padding: theme.spacing(5, 10, 5),
   },
 });
 
