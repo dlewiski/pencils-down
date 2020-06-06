@@ -1,9 +1,12 @@
 import React from 'react';
+import { withStyles } from "@material-ui/styles";
 import {Grid, Typography } from '@material-ui/core';
+import styles from './styles';
 
-function App() {
+function App(props) {
+  const {classes} = props;
   return (
-    <Grid>
+    <Grid className={classes.root}>
       <Typography variant="h1">
         PENCILS DOWN IN SOLIDARITY WITH THE MOVEMENT FOR BLACK LIVES
       </Typography>
@@ -74,4 +77,4 @@ function App() {
   );
 }
 
-export default App;
+export default withStyles(styles)(App);
