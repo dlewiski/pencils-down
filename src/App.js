@@ -1,6 +1,8 @@
 import React from 'react';
 import { withStyles } from "@material-ui/styles";
 import {Grid, Typography } from '@material-ui/core';
+import UserInput from './user-input';
+import ShowEntries from './show-entires';
 import styles from './styles';
 
 function App(props) {
@@ -73,6 +75,8 @@ function App(props) {
           </Typography>
         </Grid>
       </Grid>
+      <UserInput />
+      <ShowEntries />
     </Grid>
   );
 }
