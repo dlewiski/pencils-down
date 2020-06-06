@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { withStyles } from "@material-ui/styles";
-import { Grid, Input, Typography, Button } from "@material-ui/core";
+import { Grid, Input, Button } from "@material-ui/core";
 import styles from "./styles";
 import { API, graphqlOperation } from "aws-amplify";
 import { createPost } from "../graphql/mutations";

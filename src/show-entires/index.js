@@ -32,12 +32,15 @@ function ShowEntires(props) {
 
   return (
     <Grid className={classes.root}>
-    Show user entires
-    {posts.map(post => (
-      <Typography key={post.id}>
-      {post.selectionText}
-      </Typography>
-    ))}
+      Show user entires
+      {posts.map((post) => (
+        <Typography key={post.id}>
+          Today I will {post.selectionText} for{" "}
+          <span style={{color: 'red'}}>{post.numberOfHours}</span> hours in honor of all lives lost at
+          the hands of racist violence, and in recognition of the built
+          environment’s role in systemic racism.
+        </Typography>
+      ))}
     </Grid>
   );
 }
