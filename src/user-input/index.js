@@ -45,8 +45,6 @@ function UserInput(props) {
     }
   }
 
-  console.log(fieldValues)
-
   return (
     <Grid className={classes.root}>
       User input component

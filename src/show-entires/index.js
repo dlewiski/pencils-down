@@ -4,6 +4,7 @@ import { Grid, Typography } from "@material-ui/core";
 import styles from "./styles";
 import { API, graphqlOperation } from "aws-amplify";
 import { listPosts } from "../graphql/queries";
+import { onCreatePost } from "../graphql/subscriptions";
 
 function ShowEntires(props) {
   const { classes } = props;
@@ -18,8 +19,16 @@ function ShowEntires(props) {
         console.log(e);
       }
     }
+    // Set up subscription so list ist updated everytime a user enters a message
+    API.graphql(graphqlOperation(onCreatePost)).subscribe({
+      next: postsData => {
+        console.log("in subscription", postsData);
+        setPosts(prevPosts => ([postsData.value.data.onCreatePost, ...prevPosts]));
+      }
+    });
+
     getPosts();
-  }, [])
+  }, []);
 
   return (
     <Grid className={classes.root}>
