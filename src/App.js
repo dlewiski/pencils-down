@@ -9,10 +9,10 @@ function App(props) {
   const {classes} = props;
   return (
     <Grid className={classes.root}>
-      <Typography variant="h1">
+      <Typography variant="h1" className={classes.title}>
         PENCILS DOWN IN SOLIDARITY WITH THE MOVEMENT FOR BLACK LIVES
       </Typography>
-      <Grid>
+      <Grid className={classes.textBlock}>
         <Typography>
           This document records an expression of solidarity with the Movement
           for Black Lives.
@@ -23,7 +23,7 @@ function App(props) {
           the widespread call for systemic change.
         </Typography>
       </Grid>
-      <Grid>
+      <Grid className={classes.textBlock}>
         <Typography>
           In solidarity with the Movement for Black Lives,
         </Typography>
@@ -47,33 +47,32 @@ function App(props) {
           held by all,{" "}
         </Typography>
         <Typography>yet our solidarity must not be only spoken.</Typography>
-        <Grid>
-          <Typography>
-            May this withdrawal of labor produce a moment of silence in honor of
-            all lives lost at the hands of racist violence.
-          </Typography>
-          <Typography>
-            And in this silence, may we reflect on architecture’s complicity in
-            the production of inequity.
-          </Typography>
-          <Typography>
-            And may we, in as much as we can given our own precarious working
-            conditions, take the moment to withdraw, reflect, and refuse to
-            participate in systemic racism.
-          </Typography>
-        </Grid>
-        <Grid>
-          <Typography>
-            We recognize that the change that is needed is systemic, and we do
-            not yet have the tools to do the work that is needed now in our
-            cities.{" "}
-          </Typography>
-          <Typography>
-            We demand that our city budgets defund the militarization of the
-            police and instead allocate public funds to the production of
-            equitable cities and communities.
-          </Typography>
-        </Grid>
+      </Grid>
+      <Grid className={classes.textBlock}>
+        <Typography>
+          May this withdrawal of labor produce a moment of silence in honor of
+          all lives lost at the hands of racist violence.
+        </Typography>
+        <Typography>
+          And in this silence, may we reflect on architecture’s complicity in
+          the production of inequity.
+        </Typography>
+        <Typography>
+          And may we, in as much as we can given our own precarious working
+          conditions, take the moment to withdraw, reflect, and refuse to
+          participate in systemic racism.
+        </Typography>
+      </Grid>
+      <Grid className={classes.textBlock}>
+        <Typography>
+          We recognize that the change that is needed is systemic, and we do not
+          yet have the tools to do the work that is needed now in our cities.{" "}
+        </Typography>
+        <Typography>
+          We demand that our city budgets defund the militarization of the
+          police and instead allocate public funds to the production of
+          equitable cities and communities.
+        </Typography>
       </Grid>
       <UserInput />
       <ShowEntries />
