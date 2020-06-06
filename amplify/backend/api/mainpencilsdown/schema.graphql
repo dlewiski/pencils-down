@@ -1,0 +1,5 @@
+type Post @model @searchable {
+  id: ID!
+  selectionText: String!
+  numberOfHours: Float!
+}
