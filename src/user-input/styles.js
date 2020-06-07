@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   root: {
-    paddingBottom: theme.spacing(4),
+    padding: theme.spacing(5, 0),
   },
   formRoot: {
     display: "flex",
@@ -9,10 +9,10 @@ const styles = (theme) => ({
   inputAndTextGroup: {
     padding: theme.spacing(3, 0, 5),
     fontSize: "1.75rem",
-    color: "red",
+    color: theme.palette.red,
   },
   inputRoot: {
-    margin: theme.spacing(0, 2),
+    margin: theme.spacing(0, 2.25),
     fontSize: "1.75rem",
     width: "65px",
     "& .MuiInput-underline:before": {
@@ -24,6 +24,9 @@ const styles = (theme) => ({
   },
   inputInput: {
     textAlign: "center",
+    padding: theme.spacing(0),
+    borderBottom: "1px solid red",
+    color: "red",
   },
   inputUnderline: {
     color: "red",
@@ -40,7 +43,7 @@ const styles = (theme) => ({
     color: "white",
     alignSelf: "center",
     "&:hover": {
-      backgroundColor: 'grey',
+      backgroundColor: "grey",
     },
   },
 });

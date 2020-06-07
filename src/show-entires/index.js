@@ -10,6 +10,7 @@ import { deletePost } from "../graphql/mutations";
 function ShowEntires(props) {
   const { classes } = props;
   const [posts, setPosts] = useState([]);
+  const [totalHours, setTotalHours] = useState(0);
 
   const getPosts = async () => {
     try {
@@ -31,6 +32,15 @@ function ShowEntires(props) {
     getPosts();
   }, []);
 
+    useEffect(() => {
+      let tempTotalHours = 0;
+      posts.forEach(post => {
+        tempTotalHours += post.numberOfHours
+      })
+
+      setTotalHours(tempTotalHours);
+    }, [posts]);
+
   // const handleDelete = async postId => {
   //   try {
   //     await API.graphql(graphqlOperation(deletePost, {input: {id: postId}}));
@@ -42,13 +52,19 @@ function ShowEntires(props) {
 
   return (
     <Grid className={classes.root}>
+      <Typography className={classes.totalHours}>
+        Total hours pledged:{" "}
+        <span style={{ color: "#d50000", fontWeight: "bold" }}>
+          {totalHours}
+        </span>
+      </Typography>
       {posts.map((post) => (
         <Grid key={post.id}>
-          <Typography>
+          <Typography className={classes.postText}>
             Today, I will withhold my labor for{" "}
-            <span style={{ color: "red" }}>{post.numberOfHours}</span> hours in
-            solidarity with the Movement for Black Lives and in recognition of
-            architecture’s complicity in systemic racism.
+            <span style={{ color: "#d50000" }}>{post.numberOfHours}</span> hours
+            in solidarity with the Movement for Black Lives and in recognition
+            of architecture’s complicity in systemic racism.
           </Typography>
           {/* <Button onClick={() => handleDelete(post.id)}>Delete Post</Button> */}
         </Grid>
