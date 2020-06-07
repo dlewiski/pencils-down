@@ -5,7 +5,7 @@ import UserInput from './user-input';
 import ShowEntries from './show-entires';
 import styles from './styles';
 import Amplify from "aws-amplify";
-import awsconfig from "./aws-exports";
+import awsconfig from "./aws-exports-test";
 Amplify.configure(awsconfig);
 
 function App(props) {
