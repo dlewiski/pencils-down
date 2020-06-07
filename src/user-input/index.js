@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { withStyles } from "@material-ui/styles";
-import { Grid, Input, Button } from "@material-ui/core";
+import { Grid, Input, Button, Typography } from "@material-ui/core";
 import styles from "./styles";
 import { API, graphqlOperation } from "aws-amplify";
 import { createPost } from "../graphql/mutations";
@@ -47,17 +47,14 @@ function UserInput(props) {
 
   return (
     <Grid className={classes.root}>
-      User input component
       <form className={classes.formRoot} onSubmit={submitForm}>
         <Grid className={classes.inputAndTextGroup}>
-          <Grid>
-            Today, I will withhold my labor for
-            <Input name="hours" onChange={handleNumberInput}></Input>
-            hours in solidarity with the Movement for Black Lives and in
-            recognition of architecture’s complicity in systemic racism.
-          </Grid>
+          Today, I will withhold my labor for
+          <Input name="hours" onChange={handleNumberInput} className={classes.inputRoot}></Input>
+          hours in solidarity with the Movement for Black Lives and in
+          recognition of architecture’s complicity in systemic racism.
         </Grid>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className={classes.submitButton}>PLEDGE</Button>
       </form>
     </Grid>
   );
