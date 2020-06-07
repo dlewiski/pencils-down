@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { withStyles } from "@material-ui/styles";
-import { Grid, Input, Button, Typography } from "@material-ui/core";
+import { Grid, Input, Button } from "@material-ui/core";
 import styles from "./styles";
 import { API, graphqlOperation } from "aws-amplify";
 import { createPost } from "../graphql/mutations";
@@ -59,7 +59,6 @@ function UserInput(props) {
         ...prevFieldValues,
         numberOfHours: '',
       }));
-      console.log("form submitted")
     } catch (e) {
       console.log("error on form submit", e);
     }
@@ -85,9 +84,6 @@ function UserInput(props) {
         <Button
           type="submit"
           className={classes.submitButton}
-          disableFocusRipple={true}
-          disableElevation={true}
-          disableRipple={true}
         >
           PLEDGE
         </Button>
