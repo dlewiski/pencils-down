@@ -20,7 +20,7 @@ function App(props) {
       </Typography>
       <Grid className={classes.textBlock}>
         <Typography>
-          This protest is a material expression of solidarity with{" "}
+          This protest is an expression of solidarity with{" "}
           <Link
           className={classes.link}
             href="https://blacklivesmatter.com/"
@@ -40,9 +40,7 @@ function App(props) {
           </Link>
           . We—an unaffiliated group of architects, designers, theorists,
           urbanists, teachers, students, and built environment workers—join the
-          fight against racist policies and practices by withholding labor as
-          much as is possible for each of us. We recognize that the ability to
-          withhold labor is not a privilege held by all, yet we cannot ignore
+          fight against racist policies and practices by withholding labor. We recognize that the ability to withhold labor is not a privilege held by all, yet we cannot ignore
           that our solidarity must be mobilized by action.
         </Typography>
       </Grid>
