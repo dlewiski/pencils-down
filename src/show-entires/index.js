@@ -21,10 +21,9 @@ function ShowEntires(props) {
   };
 
   useEffect(() => {
-    // Set up subscription so list ist updated everytime a user enters a message
+    // Set up subscription so list ist updated everytime a user enters hours
     API.graphql(graphqlOperation(onCreatePost)).subscribe({
       next: postsData => {
-        console.log("in subscription", postsData);
         setPosts(prevPosts => ([postsData.value.data.onCreatePost, ...prevPosts]));
       }
     });
@@ -32,18 +31,17 @@ function ShowEntires(props) {
     getPosts();
   }, []);
 
-  const handleDelete = async postId => {
-    try {
-      await API.graphql(graphqlOperation(deletePost, {input: {id: postId}}));
-      getPosts();
-    } catch (e) {
-      console.log('delete error', e)
-    }
-  };
+  // const handleDelete = async postId => {
+  //   try {
+  //     await API.graphql(graphqlOperation(deletePost, {input: {id: postId}}));
+  //     getPosts();
+  //   } catch (e) {
+  //     console.log('delete error', e)
+  //   }
+  // };
 
   return (
     <Grid className={classes.root}>
-      Show user entires
       {posts.map((post) => (
         <Grid key={post.id}>
           <Typography>
@@ -52,7 +50,7 @@ function ShowEntires(props) {
             solidarity with the Movement for Black Lives and in recognition of
             architecture’s complicity in systemic racism.
           </Typography>
-          <Button onClick={() => handleDelete(post.id)}>Delete Post</Button>
+          {/* <Button onClick={() => handleDelete(post.id)}>Delete Post</Button> */}
         </Grid>
       ))}
     </Grid>

@@ -8,37 +8,57 @@ import { createPost } from "../graphql/mutations";
 function UserInput(props) {
   const { classes } = props;
   const [fieldValues, setFieldValues] = useState({
-    selectionText: "",
-    numberOfHours: null,
+    selectionText: '',
+    numberOfHours: '',
   });
-
-  const handleTextInput = (event => {
-    event.persist();
-
-    setFieldValues((prevFieldValues) => ({
-      ...prevFieldValues,
-      selectionText: event.target.value,
-    }));
-  })
 
   const handleNumberInput = (event => {
     event.persist();
-    
+
+    //check if empty value is passed
+    if (event.target.value === ''){
+      console.log('empty entry')
+      return setFieldValues((prevFieldValues) => ({
+        ...prevFieldValues,
+        numberOfHours: event.target.value,
+      }));
+    }
+
+    // Check to make sure no letters are present
+    if (/[a-z]/i.test(event.target.value)) {
+      return console.log("not a number");
+    }
+
+    // limit how many digits can be entered
+    if (event.target.value.length > 4) {
+      return console.log("number is to long");
+    }
+
     setFieldValues((prevFieldValues) => ({
       ...prevFieldValues,
-      numberOfHours: parseFloat(event.target.value),
+      numberOfHours: event.target.value,
     }));
   })
 
-  const validateForm = () => {
-
-  }
-
   const submitForm = async event => {
-    console.log("in submit form")
     event.preventDefault();
+    let hoursToSubmit = 0;
+    if (parseFloat(fieldValues.numberOfHours)) {
+      hoursToSubmit = parseFloat(fieldValues.numberOfHours);
+    } else {
+      console.log("entry could not be parsed to float")
+      return
+    }
     try {
-      await API.graphql(graphqlOperation(createPost, { input: fieldValues }));
+      await API.graphql(
+        graphqlOperation(createPost, {
+          input: { numberOfHours: hoursToSubmit, selectionText: "" },
+        })
+        );
+        setFieldValues((prevFieldValues) => ({
+        ...prevFieldValues,
+        numberOfHours: '',
+      }));
       console.log("form submitted")
     } catch (e) {
       console.log("error on form submit", e);
@@ -50,11 +70,27 @@ function UserInput(props) {
       <form className={classes.formRoot} onSubmit={submitForm}>
         <Grid className={classes.inputAndTextGroup}>
           Today, I will withhold my labor for
-          <Input name="hours" onChange={handleNumberInput} className={classes.inputRoot}></Input>
+          <Input
+            value={fieldValues.numberOfHours}
+            onChange={handleNumberInput}
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+              underline: classes.inputUnderline,
+            }}
+          ></Input>
           hours in solidarity with the Movement for Black Lives and in
           recognition of architecture’s complicity in systemic racism.
         </Grid>
-        <Button type="submit" className={classes.submitButton}>PLEDGE</Button>
+        <Button
+          type="submit"
+          className={classes.submitButton}
+          disableFocusRipple={true}
+          disableElevation={true}
+          disableRipple={true}
+        >
+          PLEDGE
+        </Button>
       </form>
     </Grid>
   );
