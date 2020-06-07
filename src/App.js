@@ -22,7 +22,7 @@ function App(props) {
         <Typography>
           This protest is an expression of solidarity with{" "}
           <Link
-          className={classes.link}
+            className={classes.link}
             href="https://blacklivesmatter.com/"
             target="_blank"
             rel="noopener"
@@ -31,7 +31,7 @@ function App(props) {
           </Link>{" "}
           and the{" "}
           <Link
-          className={classes.link}
+            className={classes.link}
             href="https://m4bl.org/week-of-action/"
             target="_blank"
             rel="noopener"
@@ -40,8 +40,10 @@ function App(props) {
           </Link>
           . We—an unaffiliated group of architects, designers, theorists,
           urbanists, teachers, students, and built environment workers—join the
-          fight against racist policies and practices by withholding labor. We recognize that the ability to withhold labor is not a privilege held by all, yet we cannot ignore
-          that our solidarity must be mobilized by action.
+          fight against racist policies and practices by withholding labor. We
+          recognize that the ability to withhold labor is not a privilege held
+          by all, yet we cannot ignore that our solidarity must be mobilized by
+          action.
         </Typography>
       </Grid>
       <Grid className={classes.textBlock}>
@@ -66,6 +68,17 @@ function App(props) {
           production of inequality. And with pencils down, we demand that cities
           across the country reallocate police funding to the production of
           equitable cities and communities.
+        </Typography>
+      </Grid>
+      <Grid className={classes.textBlock}>
+        <Typography>
+          Instructions: If you are willing and able to withhold labor, type in
+          the amount of hours in the blank below. When you hit the 'pledge'
+          button, your pledge will populate the page. As pledges are added, this
+          website will serve as a record and will visualize this collective
+          action. Each day, you can pledge as many hours as you'd like, and if
+          you would like to withhold labor for more than one day, you can
+          resubmit. The website will be up as long as the protests are ongoing.
         </Typography>
       </Grid>
       <UserInput />

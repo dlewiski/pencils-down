@@ -7,7 +7,7 @@ const styles = (theme) => ({
     textAlign: "justify",
   },
   title: {
-    fontSize: '12vw',
+    fontSize: "12vw",
     fontWeight: "bold",
     letterSpacing: "8px",
     textAlign: "center",
@@ -27,7 +27,7 @@ const styles = (theme) => ({
 
   [theme.breakpoints.up("md")]: {
     title: {
-      fontSize: '10vw',
+      fontSize: "10vw",
       fontWeight: "bold",
       letterSpacing: "8px",
     },
@@ -46,6 +46,11 @@ const styles = (theme) => ({
     subTitle: {
       fontSize: "3.6vw",
       paddingBottom: "20px",
+    },
+  },
+  [theme.breakpoints.up("xl")]: {
+    title: {
+      fontSize: "6.4vw",
     },
   },
 });
