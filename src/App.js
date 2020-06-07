@@ -13,67 +13,44 @@ function App(props) {
   return (
     <Grid className={classes.root}>
       <Typography variant="h1" className={classes.title}>
-        PENCILS DOWN IN SOLIDARITY WITH THE MOVEMENT FOR BLACK LIVES
+        PENCILS DOWN PROTEST
+      </Typography>
+      <Typography variant="h2" className={classes.subTitle}>
+        IN SOLIDARITY WITH THE MOVEMENT FOR BLACK LIVES
       </Typography>
       <Grid className={classes.textBlock}>
         <Typography>
-          This document records an expression of solidarity with the Movement
-          for Black Lives.
-        </Typography>
-        <Typography>
-          We, an unaffiliated collection of architects, designers, theorists,
-          teachers, students, and built environment workers add our voices to
-          the widespread call for systemic change.
-        </Typography>
-      </Grid>
-      <Grid className={classes.textBlock}>
-        <Typography>
-          In solidarity with the Movement for Black Lives,
-        </Typography>
-        <Typography>
-          We, an unaffiliated collection of architects, designers, theorists,
-          teachers, students, and built environment workers add our voices to
-          the widespread call for systemic change.
-        </Typography>
-        <Typography className={"needsTab"}>
-          and in honor of George Floyd,
-        </Typography>
-        <Typography className={"needsTab"}>
-          and against racism and white supremacy,
-        </Typography>
-        <Typography>
-          we will withhold labor throughout this week as much as is possible for
-          each of us.
-        </Typography>
-        <Typography>
-          We recognize that the ability to withhold labor is not a privilege
-          held by all,{" "}
-        </Typography>
-        <Typography>yet our solidarity must not be only spoken.</Typography>
-      </Grid>
-      <Grid className={classes.textBlock}>
-        <Typography>
-          May this withdrawal of labor produce a moment of silence in honor of
-          all lives lost at the hands of racist violence.
-        </Typography>
-        <Typography>
-          And in this silence, may we reflect on architecture’s complicity in
-          the production of inequity.
-        </Typography>
-        <Typography>
-          And may we, in as much as we can given our own precarious working
-          conditions, take the moment to withdraw, reflect, and refuse to
-          participate in systemic racism.
+          This protest is a material expression of solidarity with Black Lives
+          Matter and the current uprising against systemic racism. We—an
+          unaffiliated group of architects, designers, theorists, urbanists,
+          teachers, students, and built environment workers—join the fight
+          against racist policies and practices by withholding labor as much as
+          is possible for each of us. We recognize that the ability to withhold
+          labor is not a privilege held by all, yet we cannot ignore that our
+          solidarity must be mobilized by action.
         </Typography>
       </Grid>
       <Grid className={classes.textBlock}>
         <Typography>
-          We recognize that the change that is needed is systemic, and we do not
-          yet have the tools to do the work that is needed now in our cities.{" "}
+          This moment demands a direct confrontation with architecture and
+          design’s participation in systemic racism. For too long, our cities
+          have been shaped by racist practices, from redlining to urban renewal
+          to gentrification. Furthermore, as professionals involved in the
+          making of cities, we know all too well that city budgets
+          disproportionately fund police departments rather than provide
+          communities with housing, transit, social services, and public
+          education. It is time to confront this complicity directly and demand
+          change.
         </Typography>
+      </Grid>
+      <Grid className={classes.textBlock}>
         <Typography>
-          We demand that our city budgets defund the militarization of the
-          police and instead allocate public funds to the production of
+          We see the act of withholding labor as a form of protest, one that
+          echoes and supports the events happening in the streets. With pencils
+          down, we honor all lives lost at the hands of racist violence. With
+          pencils down, we reflect on architecture’s complicity in the
+          production of inequality. And with pencils down, we demand that cities
+          across the country reallocate police funding to the production of
           equitable cities and communities.
         </Typography>
       </Grid>

@@ -1,11 +1,15 @@
 const styles = (theme) => ({
   root: {
-    padding: theme.spacing(5, 10, 5),
+    padding: theme.spacing(5, 6, 5),
   },
   title: {
-    fontSize: '40px',
-    fontWeight: 'bold',
-    paddingBottom: '20px',
+    fontSize: theme.typography.pxToRem(70),
+    fontWeight: "bold",
+    letterSpacing: "8px",
+  },
+  subTitle: {
+    fontSize: theme.typography.pxToRem(38),
+    paddingBottom: "20px",
   },
   textBlock: {
     padding: theme.spacing(1.5, 0),
