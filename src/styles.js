@@ -38,7 +38,7 @@ const styles = (theme) => ({
   },
   [theme.breakpoints.up("lg")]: {
     title: {
-      fontSize: "6.59vw",
+      fontSize: "6.25vw",
       fontWeight: "bold",
       letterSpacing: "8px",
       textAlign: "justify",
