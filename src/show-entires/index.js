@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { withStyles } from "@material-ui/styles";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Button } from "@material-ui/core";
 import styles from "./styles";
 import { API, graphqlOperation } from "aws-amplify";
 import { listPosts } from "../graphql/queries";
 import { onCreatePost } from "../graphql/subscriptions";
+import { deletePost } from "../graphql/mutations";
 
 function ShowEntires(props) {
   const { classes } = props;
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const postsData = await API.graphql(graphqlOperation(listPosts))
-        setPosts(postsData.data.listPosts.items);
-      } catch (e) {
-        console.log(e);
-      }
+  const getPosts = async () => {
+    try {
+      const postsData = await API.graphql(graphqlOperation(listPosts));
+      setPosts(postsData.data.listPosts.items);
+    } catch (e) {
+      console.log(e);
     }
+  };
+
+  useEffect(() => {
     // Set up subscription so list ist updated everytime a user enters a message
     API.graphql(graphqlOperation(onCreatePost)).subscribe({
       next: postsData => {
@@ -30,16 +32,28 @@ function ShowEntires(props) {
     getPosts();
   }, []);
 
+  const handleDelete = async postId => {
+    try {
+      await API.graphql(graphqlOperation(deletePost, {input: {id: postId}}));
+      getPosts();
+    } catch (e) {
+      console.log('delete error', e)
+    }
+  };
+
   return (
     <Grid className={classes.root}>
       Show user entires
       {posts.map((post) => (
-        <Typography key={post.id}>
-          Today I will {post.selectionText} for{" "}
-          <span style={{color: 'red'}}>{post.numberOfHours}</span> hours in honor of all lives lost at
-          the hands of racist violence, and in recognition of the built
-          environment’s role in systemic racism.
-        </Typography>
+        <Grid key={post.id}>
+          <Typography>
+            Today, I will withhold my labor for{" "}
+            <span style={{ color: "red" }}>{post.numberOfHours}</span> hours in
+            solidarity with the Movement for Black Lives and in recognition of
+            architecture’s complicity in systemic racism.
+          </Typography>
+          <Button onClick={() => handleDelete(post.id)}>Delete Post</Button>
+        </Grid>
       ))}
     </Grid>
   );

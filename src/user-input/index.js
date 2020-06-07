@@ -50,12 +50,11 @@ function UserInput(props) {
       User input component
       <form className={classes.formRoot} onSubmit={submitForm}>
         <Grid className={classes.inputAndTextGroup}>
-          <Grid>Today, I will
-          <Input name="text" onChange={handleTextInput}></Input>
-          for
-          <Input name="hours" onChange={handleNumberInput}></Input>
-            hours in honor of all lives lost at the hands of racist violence, and
-            in recognition of the built environment’s role in systemic racism.
+          <Grid>
+            Today, I will withhold my labor for
+            <Input name="hours" onChange={handleNumberInput}></Input>
+            hours in solidarity with the Movement for Black Lives and in
+            recognition of architecture’s complicity in systemic racism.
           </Grid>
         </Grid>
         <Button type="submit">Submit</Button>
