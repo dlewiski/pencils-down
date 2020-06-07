@@ -19,7 +19,7 @@ const styles = (theme) => ({
   [theme.breakpoints.up("lg")]: {
     postText: {
       textAlign: "justify",
-      fontSize: theme.typography.pxToRem(16),
+      fontSize: "1.31vw",
     },
   },
 });

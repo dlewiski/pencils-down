@@ -19,14 +19,14 @@ const styles = (theme) => ({
       borderBottom: "1px solid red",
     },
     "& .MuiInput-underline:after": {
-      borderBottom: "1px solid red",
+      borderBottom: `1px solid ${theme.palette.red}`,
     },
   },
   inputInput: {
     textAlign: "center",
     padding: theme.spacing(0),
-    borderBottom: "1px solid red",
-    color: "red",
+    borderBottom: `1px solid ${theme.palette.red}`,
+    color: theme.palette.red,
   },
   inputUnderline: {
     color: "red",
