@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from "@material-ui/styles";
-import {Grid, Typography } from '@material-ui/core';
+import {Grid, Typography, Link } from '@material-ui/core';
 import UserInput from './user-input';
 import ShowEntries from './show-entires';
 import styles from './styles';
@@ -20,14 +20,30 @@ function App(props) {
       </Typography>
       <Grid className={classes.textBlock}>
         <Typography>
-          This protest is a material expression of solidarity with Black Lives
-          Matter and the current uprising against systemic racism. We—an
-          unaffiliated group of architects, designers, theorists, urbanists,
-          teachers, students, and built environment workers—join the fight
-          against racist policies and practices by withholding labor as much as
-          is possible for each of us. We recognize that the ability to withhold
-          labor is not a privilege held by all, yet we cannot ignore that our
-          solidarity must be mobilized by action.
+          This protest is a material expression of solidarity with{" "}
+          <Link
+          className={classes.link}
+            href="https://blacklivesmatter.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            Black Lives Matter
+          </Link>{" "}
+          and the{" "}
+          <Link
+          className={classes.link}
+            href="https://m4bl.org/week-of-action/"
+            target="_blank"
+            rel="noopener"
+          >
+            current uprising against systemic racism
+          </Link>
+          . We—an unaffiliated group of architects, designers, theorists,
+          urbanists, teachers, students, and built environment workers—join the
+          fight against racist policies and practices by withholding labor as
+          much as is possible for each of us. We recognize that the ability to
+          withhold labor is not a privilege held by all, yet we cannot ignore
+          that our solidarity must be mobilized by action.
         </Typography>
       </Grid>
       <Grid className={classes.textBlock}>

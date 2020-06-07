@@ -29,6 +29,13 @@ function UserInput(props) {
       return console.log("not a number");
     }
 
+    // Check to make sure no special characters are present
+    // eslint-disable-next-line no-useless-escape
+    if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(event.target.value)) {
+      return console.log("contains special characters");
+    }
+
+
     // limit how many digits can be entered
     if (event.target.value.length > 4) {
       return console.log("number is to long");
@@ -72,6 +79,7 @@ function UserInput(props) {
           <Input
             value={fieldValues.numberOfHours}
             onChange={handleNumberInput}
+            disableUnderline
             classes={{
               root: classes.inputRoot,
               input: classes.inputInput,
@@ -81,10 +89,7 @@ function UserInput(props) {
           hours in solidarity with the Movement for Black Lives and in
           recognition of architecture’s complicity in systemic racism.
         </Grid>
-        <Button
-          type="submit"
-          className={classes.submitButton}
-        >
+        <Button type="submit" className={classes.submitButton}>
           PLEDGE
         </Button>
       </form>
