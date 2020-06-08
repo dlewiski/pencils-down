@@ -78,7 +78,17 @@ function App(props) {
           website will serve as a record and will visualize this collective
           action. Each day, you can pledge as many hours as you'd like, and if
           you would like to withhold labor for more than one day, you can
-          resubmit. The website will be up as long as the protests are ongoing.
+          resubmit. Lastly,{" "}
+          <Link
+            className={classes.link}
+            href="https://docs.google.com/document/d/1dp6CIxYnOXUywy4Y7zY3ypoDQETYQcsX7D3T6LjMhV0/edit"
+            target="_blank"
+            rel="noopener"
+          >
+            take action
+          </Link>{" "}
+          during your pledged time. The website will be up as long as the protests
+          are ongoing.
         </Typography>
       </Grid>
       <UserInput />
