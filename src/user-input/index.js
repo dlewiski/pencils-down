@@ -41,6 +41,11 @@ function UserInput(props) {
       return console.log("number is to long");
     }
 
+    // limit entry to max of 12
+    if (parseInt(event.target.value) > 12) {
+      return console.log("number greater than 12");
+    }
+
     setFieldValues((prevFieldValues) => ({
       ...prevFieldValues,
       numberOfHours: event.target.value,
