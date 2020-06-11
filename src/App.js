@@ -87,8 +87,19 @@ function App(props) {
           >
             take action
           </Link>{" "}
-          during your pledged time. The website will be up as long as the protests
-          are ongoing.
+          during your pledged time. The website will be up as long as the
+          protests are ongoing.
+        </Typography>
+      </Grid>
+      <Grid className={classes.textBlock}>
+        <Typography>
+          For accountability purposes, entries over 12 hours have been taken
+          down, as the pledge specifically asks for commitments to be made one
+          day at a time. If you are pledging more than one day, please enter a
+          new pledge each day. If you pledged on behalf of others, please reach
+          out to them and submit pledges separately. If the pledges with
+          unusually high numbers were made in earnest, you are invited to return
+          and resubmit.
         </Typography>
       </Grid>
       <UserInput />
