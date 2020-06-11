@@ -93,7 +93,7 @@ function App(props) {
       </Grid>
       <Grid className={classes.textBlock}>
         <Typography>
-          For accountability purposes, entries over 12 hours have been taken
+          *For accountability purposes, entries over 12 hours have been taken
           down, as the pledge specifically asks for commitments to be made one
           day at a time. If you are pledging more than one day, please enter a
           new pledge each day. If you pledged on behalf of others, please reach

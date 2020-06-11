@@ -42,7 +42,7 @@ function UserInput(props) {
     }
 
     // limit entry to max of 12
-    if (parseInt(event.target.value) > 12) {
+    if (parseFloat(event.target.value) > 12) {
       return console.log("number greater than 12");
     }
 
@@ -54,7 +54,14 @@ function UserInput(props) {
 
   const submitForm = async event => {
     event.preventDefault();
-    let hoursToSubmit = 0;
+    let hoursToSubmit = 0.01;
+    if (parseFloat(fieldValues.numberOfHours) <= 0) {
+      console.log("number needs to be greater than 0")
+      return setFieldValues((prevFieldValues) => ({
+        ...prevFieldValues,
+        numberOfHours: "",
+      }));
+    }
     if (parseFloat(fieldValues.numberOfHours)) {
       hoursToSubmit = parseFloat(fieldValues.numberOfHours);
     } else {
